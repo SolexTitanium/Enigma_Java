@@ -12,6 +12,7 @@ public class Permutations {
         if(in.length <= 10 && out.length == in.length){
             for(int i = 0;i<out.length;i++){
                 permutations.put(in[i],out[i]);
+                permutations.put(out[i],in[i]);
             }
         }
         else {

@@ -51,16 +51,16 @@ public class Rotor {
         Character[] c;
         HashMap<Character,Character> tmp = new HashMap<Character,Character>();
         switch (ID){
-            case 4:
+            case 1:
                 c = R4;
                 break;
-            case 5:
+            case 2:
                 c = R5;
                 break;
-            case 6:
+            case 3:
                 c = R6;
                 break;
-            case 7:
+            case 4:
                 c = R7;
                 break;
             default:
