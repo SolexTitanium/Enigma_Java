@@ -44,22 +44,28 @@ public class Enigma {
 
     //methodes
     public Character chiffre(Character c){
-        return permutations.permute(
-                rotors[2].chiffre(
-                        rotors[1].chiffre(
-                                rotors[0].chiffre(
-                                        REFLECTEUR.chiffre(
-                                                rotors[0].chiffre(
-                                                        rotors[1].chiffre(
-                                                                rotors[0].chiffre(
-                                                                        permutations.permute(c)
-                                                                )
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+        if (c == ' '){
+            return c;
+        }
+        else {
+            return permutations.permute(
+                    rotors[2].chiffre(
+                            rotors[1].chiffre(
+                                    rotors[0].chiffre(
+                                            REFLECTEUR.chiffre(
+                                                    rotors[0].chiffre(
+                                                            rotors[1].chiffre(
+                                                                    rotors[0].chiffre(
+                                                                            permutations.permute(c)
+                                                                    )
+                                                            )
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
+            );
+        }
+
     }
 }

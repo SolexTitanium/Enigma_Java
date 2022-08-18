@@ -1,6 +1,7 @@
 package org.solex;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -32,6 +33,7 @@ public class Main {
         System.out.println(e.chiffre('A'));*/
         try {
             int r1,r2,r3,ref = 0;
+            int run = 1;
             String lettres;
             Scanner input = new Scanner(System.in);
             do {
@@ -66,7 +68,25 @@ public class Main {
                 }
             }
             Enigma enigma = new Enigma(r1,r2,r3,ref,permIn,permOut);
-            System.out.println(enigma);
+            System.out.println("Enigma configurée pour quiter le programme entrez @Quit \n Entrez un message et il vous sera retourné chiffré");
+
+            do{
+                String message = "";
+                String messageChiffree = "";
+                System.out.println("Quel est le message a coder ?");
+                message = input.nextLine().toUpperCase();
+                if (message.equals("@QUIT")){
+                    run = 0;
+                }
+                else {
+                    for (int i=0;i<message.length();i++) {
+                        messageChiffree += enigma.chiffre(message.charAt(i));
+                        System.out.println(messageChiffree);
+                    }
+                }
+
+
+            }while(run == 1);
             input.close();
         }
         catch (Exception e){
